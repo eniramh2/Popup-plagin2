@@ -1,0 +1,103 @@
+body {
+    background: #2c3e50;
+    font-family: "ratio-1", "ratio-2", sans-serif;
+    color: rgba(255, 255, 255, 0.89);
+}
+a {
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+    color: black;
+    padding-top: 10px;
+    padding-right: 86px;
+    padding-bottom: 10px;
+    line-height: 39px;
+}
+li {
+    list-style-type: none;
+}
+.menuWrapper>ul>li>a {
+    line-height: 25px;
+    padding-right: 35px;
+    padding-left: 65px;
+    padding-top: 17px;
+    padding-bottom: 21px;
+    font-size: 20px;
+    color: white;
+}
+.menuWrapper {
+    margin: 0 auto;
+    background-color: #2ebb98;
+    width: 99%;
+    position: absolute;
+}
+.menuWrapper>ul>li {
+    border-radius: 5px;
+    color: #697280;
+    display: inline;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+.menuWrapper>ul>li {
+    background-image: url(img/menu_icons.png);
+    background-repeat: no-repeat;
+}
+.menuWrapper>ul>.home {
+    background-position: 0px -12px;
+}
+.menuWrapper>ul>.about {
+    background-position: 0px -77px;
+}
+.menuWrapper>ul >.gallery {
+    background-position: 0px -137px;
+}
+.menuWrapper>ul >.contact {
+    background-position: -301px -12px;
+}
+.menuWrapper>ul>li>ul {
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: none;
+}
+.gallery>ul {
+    left: 203px;
+}
+.about>ul {
+    left: 393px;
+}
+a:hover {
+    color: darkgreen;
+}
+.menuWrapper>ul>.gallery:hover >ul {
+    display: inline-block;
+}
+.menuWrapper>ul>.about:hover >ul {
+    display: inline-block;
+}
+.menuWrapper>ul>.about:hover >a {
+    padding-bottom: 134px;
+}
+.menuWrapper>ul>.gallery:hover >a {
+    padding-bottom: 134px;
+}
+h3 {
+    position: absolute;
+    margin: 101px 16px;
+    padding: 7px;
+    font-size: 15px;
+    border-left: double 3px white;
+}
+.btnOpen {
+    margin: 257px 48px;
+    background-color: rgba(237, 245, 253, 0.86);
+    padding: 10px 20px;
+    border: solid 3px white;
+    color: rgb(68, 65, 65);
+    font-family: monospace;
+    font-size: 19px;
+}
