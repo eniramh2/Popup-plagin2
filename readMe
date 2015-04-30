@@ -1,0 +1,42 @@
+Overview
+This plagin is popup dialog for your website ,where you can add content and define buttons with actions.
+
+Installation
+<script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="popup_style.css" /> 
+
+It will be better if script will be in the end of your body.   
+<script type="text/javascript" src="script/plagin.js"></script>
+
+
+Getting Started
+popup can run with minimal options.
+At first you must choose your html element $('#myPopup') ,then
+
+$('#myPopup').popupPlugin({ });
+
+
+
+Available Options
+
+animateOpening : use 'top' ,'bottom ','left' and 'right' to open popup with nice animation and none to disable the  animation. Default is none.
+closeEsc:	 close popup  pressing the keyboard Escape button.Default is 'true'.
+autoclose:	 will auto close popup after a specific time .The default value is false
+autocloseTime:	 will auto close popup after a specific time if autoclose is 'true'.The default time is 3000 miliseconds.
+overlay: 	 you will have nice overlay behind your popup.Default is 'true'.
+modal:		 don't let you to close the popup by clicking the overlay. Default value is 'true'.
+title:		 default is empty.
+content: 	 default is empty.
+position:	 use 'top' or 'center' to positioning your popup.Default value is 'center'.
+size:		 use 'large' or 'small' or 'normal' to resize your popup.Default value is 'normal'.	
+
+define Buttons like this .The buttons can have 'warning','danger' and 'simple' styles.Default value is 'simple'.
+'buttons': {
+                'ButtonTitle': {
+                    'style': 'warning',
+                    'action': function() {
+                        //some action that you want to happen after click on the button
+			//if you want the action be close ,just disable action
+                    }
+                }
+	  }

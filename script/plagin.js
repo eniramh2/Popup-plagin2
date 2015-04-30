@@ -23,7 +23,7 @@
             'autoclose': false,
             'autocloseTime': 3000,
             'position': 'center',
-            'size':'normal',
+            'size': 'normal',
             'onClose': {
                 'animateCloseing': 'none'
             },
@@ -71,9 +71,6 @@
                 }, function() {
                     defaltTop = parseInt(popup.css('top'));
                 });
-
-
-
             },
             left: function(elem, pos) {
                 elem.css({
@@ -158,7 +155,7 @@
                         'display': 'none'
                     });
                     popup.removeAttr("style");
-                    
+
                 });
             },
             none: function(elem) {
@@ -220,34 +217,34 @@
                 if ('style' in settings['buttons'][key]) {
                     var style = settings['buttons'][key]['style'];
                 } else var style = "simple";
-                var btn = "<button class = 'popupBtn " + style + "' id = '" + key + "'>" + key + "</button>";
-                $('.popupFooter').append(btn);
-                $(btn).click(function() {
-
+                $('.popupFooter').append("<button class = 'popupBtn " + style + "' id = '" + key + "'>" + key + "</button>");
+                $('#' + key).click(function() {
                     action();
-                    alert("The btn was clicked.");
                 });
             }());
         }
-        function size (size){
-                    switch(size){
-                        case 'normal':s = 650;
-                        break;
-                        case 'large':s = 900;
-                        break;
-                        case 'small':s = 300;
-                        break;
-                    }
-                    popup.css("width",s+'px');
-                }
-                size(settings['size']);
+
+        function size(size) {
+            switch (size) {
+                case 'normal':
+                    s = 650;
+                    break;
+                case 'large':
+                    s = 900;
+                    break;
+                case 'small':
+                    s = 300;
+                    break;
+            }
+            popup.css("width", s + 'px');
+        }
+        size(settings['size']);
         if (settings["position"] == 'top') {
             popup.css({
                 'margin-left': -popup.width() / 2 + "px",
             });
             position = 2;
-        } 
-        else {
+        } else {
 
 
             if (popup.height() > screenH) {
@@ -256,8 +253,7 @@
                     'margin-left': -popup.width() / 2 + "px",
                 });
 
-            } 
-            else {
+            } else {
                 position = 50;
                 popup.css({
                     'margin-left': -popup.width() / 2 + "px",
@@ -266,23 +262,24 @@
             }
         }
         //////////////////////////////////////////////////////////opening/////////////////////////////////////////
-        
+
         open[settings['animateOpening']](popup, position);
 
         $(window).scroll(function() {
             var scrollTop = $(document).scrollTop();
             h = popup.height();
             screenH = $("#overlay").height();
-                        
+
 
             if (h > screenH) {
-                limit = h -screenH;
+                limit = h - screenH;
 
                 if (scrollTop > limit) {
-                    popup.css("top", defaltTop + scrollTop -limit-20+ "px")
+                    popup.css("top", defaltTop + scrollTop - limit - 20 + "px")
                 }
-            } 
-            else {
+                if (scrollTop == 0)
+                    popup.css("top", 20 + "px");
+            } else {
                 popup.css("top", defaltTop + scrollTop + "px");
             }
         });
@@ -298,12 +295,12 @@
             $(document).keyup(keyUpFunc);
         }
 
-
         $('.colseXIcone').bind('click', onClose);
 
         if (!settings['modal']) {
             $('#overlay').bind('click', onClose)
         }
+
         if (settings['autoclose']) {
             timer = setTimeout(function() {
                 onClose()
